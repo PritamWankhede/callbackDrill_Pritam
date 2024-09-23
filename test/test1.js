@@ -1,8 +1,10 @@
-const {makeDirectory,createFiles,deleteDirectory} = require('../problem1');
+const {createDir,createFiles,deleteFiles} = require('../problem1');
 
-makeDirectory('./newdirectory',1,()=>{
-    createFiles('./newdirectory',5,(message)=>{
-        deleteDirectory(directory) ;
-   });
-});
- 
+let directory ='./Directory';
+createDir(directory,(dir)=>{
+    createFiles(directory,5,()=>{
+        deleteFiles(directory,5,()=>{
+            console.log("callback run sucessfully");
+        })
+    })
+})
