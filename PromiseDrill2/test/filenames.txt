@@ -1,0 +1,3 @@
+newFileOfUpperCase.txt
+newsplitedFile.txt
+newSortedFile.txt

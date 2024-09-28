@@ -1,0 +1,3 @@
+newFile.txt
+newFileLowerCase.txt
+sortedFile.txt

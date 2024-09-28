@@ -1,12 +1,14 @@
-const {fileRead,convertTopperCase,fileTolowerCaseAndSplit,sortAndRewriteFile,deleteFilesFromList} = require('../Promise2');
-let file = '../lipsum.txt';
+const {fileRead,convertToUpperCase,fileToLowerCaseAndSplit,sortAndRewriteFile,deleteFilesFromList} = require('../problem2');
+let file = './lipsum.txt';
 let filenames = 'filenames.txt'
 fileRead(file).then((data)=>{
-   return convertTopperCase(data,filenames)
-   .then((newFileOfUpperCase)=>{
-        return fileTolowerCaseAndSplit(newFileOfUpperCase,filenames)
-    .then((newsplitedFile)=>{
-        return sortAndRewriteFile(newsplitedFile,filenames)
+   return convertToUpperCase(data,filenames)
+   .then((newFileOfUpperCase)=>
+    {
+      return fileToLowerCaseAndSplit(newFileOfUpperCase,filenames)
+    .then((newsplitedFile)=>
+    {
+      return sortAndRewriteFile(newsplitedFile,filenames)
     .then(()=>{deleteFilesFromList(filenames)})
         })
     })

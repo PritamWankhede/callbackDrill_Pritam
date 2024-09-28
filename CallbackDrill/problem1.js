@@ -32,24 +32,31 @@
          }
      }
  
-  function deleteFiles(directory){
-     fs.readdir(directory,'utf-8',(err,data)=>{
-          if(err){
-             console.error(`${err}`);
-          }
-          console.log("file read sucessfully");
- 
-         data.forEach((file)=>{
-              let filePath = Path.join(directory,file)
-              fs.unlink(filePath,(err)=>{
-                 if(err){
-                 console.log(`${err}`);
-                 }
-                 console.log("file deleted") 
-             })
-         }) 
-     })
-  }
+     function deleteFiles(directory) {
+        fs.readdir(directory, 'utf-8', (err, data) => {
+            if (err) {
+                console.error(`${err}`);
+                return;
+            }
+            console.log("Files read successfully");
+    
+            data.forEach((file) => {
+                let filePath = Path.join(directory, file);
+                if (fs.existsSync(filePath)) {
+                    fs.unlink(filePath, (err) => {
+                        if (err) {
+                            console.error(`${err}`);
+                            return;
+                        }
+                        console.log(`${file} deleted`);
+                    });
+                } else {
+                    console.log(`File ${file} does not exist`);
+                }
+            });
+        });
+    }
+    
 
 module.exports = {createDir,createFiles,deleteFiles};
 
