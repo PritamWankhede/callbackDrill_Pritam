@@ -53,7 +53,7 @@ function fileTolowerCaseAndSplit(newFileOfUpperCase, filenames) {
             return fs.writeFile(newsplitedFile, splitedData)
                 .then(() => fs.appendFile(filenames, newsplitedFile + '\n'))
                 .then(() => {
-                    return newsplitedFile; // Pass the file name forward
+                    return newsplitedFile; 
                 });
         })
         .catch(error => {

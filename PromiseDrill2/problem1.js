@@ -5,7 +5,8 @@
         1. Create a directory of random JSON files
         2. Delete those files simultaneously 
 */
-const fs = require('fs/promises');
+// const fs = require('fs/promises');
+const fs = require('fs').promises;
 const Path = require('path');
 
  function createDirectory(directory){  
