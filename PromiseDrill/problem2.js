@@ -62,7 +62,7 @@ function sortTheContent(file, fileNames) {
         .then(() => fs.appendFile(fileNames, sortedFile + '\n')); 
 }
 
-function deleteFiles(dir, fileNames) {
+function deleteFiles(fileNames) {
     return fs.readFile(fileNames, 'utf-8')
         .then((data) => {
             const files = data.split('\n').filter(Boolean).map(file => file.trim()); 
@@ -71,5 +71,4 @@ function deleteFiles(dir, fileNames) {
         })
         .then(()=>fs.writeFile(fileNames,''));
 }
-
 module.exports = main;
