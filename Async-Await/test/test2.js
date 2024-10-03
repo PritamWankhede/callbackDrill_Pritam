@@ -7,7 +7,6 @@ const {readFileData,convertToUpperCase,lowerCase,sortSplittedData,deleteFiles} =
     let fileWithLowerCase = '../fileWithLowerCase.txt';
     let newSortedFile = '../sorteddFile.txt'
    await readFileData(txtFile);
-   
    await convertToUpperCase(txtFile,filenames,fileWithUpperCase);
    await lowerCase(fileWithUpperCase,filenames,fileWithLowerCase);
    await sortSplittedData(fileWithLowerCase,filenames,newSortedFile);

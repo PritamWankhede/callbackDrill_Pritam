@@ -1,15 +1,9 @@
-const {createDirectory,filesInDirectory,deleteAllFiles} = require('../problem1');
-let directory = '../newDirectory';
-let nofiles = 5;
+const {contentToUpperCase,contentToLowerCase,deleteFile} = require('../problem1');
 
-createDirectory(directory).then(()=>{
-  return filesInDirectory(directory,nofiles);
-}).then(()=>{
-   return deleteAllFiles(directory);
-}).then(()=>{
-  console.log("All files deletedd sucessfully")
-})   
-.catch((error)=>{
-    console.log(`Error in making file ${error}`);
-});
-
+let directory = './directory'
+let noFiles = 5;
+createDirectory(directory)
+.then((directory)=>{return createFiles(directory,noFiles)})
+.then((directory)=>{return deleteFiles(directory)})
+.then(()=>{console.log("Files created sucssesfully")})
+.catch((error)=>{console.error(error)});

@@ -39,11 +39,11 @@ async function deleteFiles(directory){
           console.log(path);
           fs.unlink(path);
        })
-    } 
+    }
     catch{
         console.log(error);
     }
 }
-
-
 module.exports = {createDirectory,createFile,deleteFiles};
+
+                                                                                                                                                           

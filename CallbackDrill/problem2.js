@@ -25,10 +25,10 @@ fs.readFile(file,'utf-8',(error,data)=>{
 //2. Convert the content to uppercase & write to a new file. Store the name of the new file in filenames.txt
   function convertAndStroreFile(data,callback)
   {
-     let updatedFile = data.toUpperCase();
+     let updatedata = data.toUpperCase();
      let newFile = 'newFile.txt';
 
-     fs.writeFile(newFile,updatedFile,(error)=>{
+     fs.writeFile(newFile,updatedata,(error)=>{
         if(error){
             console.log(`Error in callback code ${error}`);
             return ;

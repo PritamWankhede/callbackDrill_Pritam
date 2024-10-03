@@ -3,8 +3,8 @@ const {readFile,convertAndStroreFile,readConvertAndSplitFile,sortedFile,deleteli
 readFile('../lipsum.txt',(data)=>{
     convertAndStroreFile(data,(newFile)=>{
          readConvertAndSplitFile(newFile,(newFileLowerCase)=>{
-            sortedFile(newFileLowerCase,(data)=>{
-                deletelistFiles('./filenames.txt',(data)=>{
+            sortedFile(newFileLowerCase,()=>{
+                deletelistFiles('./filenames.txt',()=>{
                     console.log(`sucessfully run`);
                 })
             })

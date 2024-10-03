@@ -74,19 +74,14 @@ function thirdExercise(){
      },300)
    })
   
-   // 3. Log out the promise while it's pending
    console.log(promise);
-
-   //4. Print out "Program in progress..." as well
+ 
     console.log("Program in progress...")
 
-   //5. Print out "Step 1 complete" when the first promise fulfills
    promise.then((message)=>{
     console.log(message); 
 })
 
-  // 6. Have the first promise return another new Promise that will
-  //    fulfill after 3 seconds with the message: "Step 2 Complete
      return new Promise((resolve)=>{
          setTimeout(()=>{
             resolve("Step 2 completed");

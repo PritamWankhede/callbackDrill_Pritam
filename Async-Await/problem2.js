@@ -28,9 +28,7 @@ async function convertToUpperCase(file,filenames,fileWithUpperCase) {
         let upperCase = contentInFile.toUpperCase();
         // console.log(upperCase);
         await fs.writeFile(fileWithUpperCase,upperCase);
-        
-        await fs.appendFile(filenames , fileWithUpperCase + '\n');
-
+        await fs.appendFile(filenames ,fileWithUpperCase + '\n');
     } catch (error) {
         console.log(error);
     }

@@ -1,3 +1,6 @@
 newFile.txt
 newFileLowerCase.txt
 sortedFile.txt
+newFile.txt
+newFileLowerCase.txt
+sortedFile.txt
